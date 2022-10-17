@@ -16,6 +16,8 @@ body {
 
 .item:hover {
     box-shadow: 0 0 1em #aaa;
+    transform: scale(1.1);
+    z-index: 3;
 }
 
 .item.completed {
