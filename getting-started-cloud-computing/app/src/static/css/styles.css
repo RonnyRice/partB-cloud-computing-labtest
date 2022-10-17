@@ -16,7 +16,9 @@ body {
 
 .item:hover {
     box-shadow: 0 0 1em #aaa;
-    transform: scale(1.1);
+    transform: scale(1.5);
+    transform-origin: bottom;
+    transition-duration: 1s;
     z-index: 3;
 }
 
