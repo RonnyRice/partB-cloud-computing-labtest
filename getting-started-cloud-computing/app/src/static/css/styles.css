@@ -1,5 +1,5 @@
 body {
-    background-color: #f4f4f4;
+    background: linear-gradient(90deg, rgba(36,187,69,1) 0%, rgba(255,255,255,1) 51%, rgba(14,141,212,1) 100%);
     margin-top: 50px;
     font-family: 'Lato';
 }
@@ -41,4 +41,8 @@ body {
 
 button:focus {
     border: 1px solid #333;
+}
+
+#myTitle{
+    text-align: center;
 }

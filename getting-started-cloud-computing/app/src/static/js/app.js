@@ -1,13 +1,40 @@
 function App() {
-    const { Container, Row, Col } = ReactBootstrap;
+    var myHour = new Date();
+    var hh = myHour.getHours();
+    var message = "";
+    if ( hh >= 0 && hh <= 6){
+        message = "Good Night!";
+    }
+    else if( hh >= 20 && hh <= 23){
+        message = "Good Night!";
+    }
+
+    else if ( hh >= 6 && hh < 12){
+        message = "Good Morning!";
+    }
+
+    else if ( hh >= 12 &&  hh < 18){
+        message = "Good Afternoon!";
+    }
+
+    else if ( hh >= 18 && hh < 20){
+        message = "Good  Evenening!"
+    }
+
+    const {  Container, Row, Col } = ReactBootstrap;
     return (
-        <Container>
-            <Row>
-                <Col md={{ offset: 3, span: 6 }}>
-                    <TodoListCard />
-                </Col>
-            </Row>
-        </Container>
+        <div> 
+            <h2 id="myTitle">{message}</h2>
+             <Container>
+             
+             <Row>
+                 <Col md={{ offset: 3, span: 6 }}>
+                     <TodoListCard />
+                 </Col>
+             </Row>
+         </Container>
+        </div>
+       
     );
 }
 
@@ -106,7 +133,7 @@ function AddItemForm({ onNewItem }) {
                         disabled={!newItem.length}
                         className={submitting ? 'disabled' : ''}
                     >
-                        {submitting ? 'Adding...' : 'Add Item'}
+                        {submitting ? 'Adding...' : 'Add'}
                     </Button>
                 </InputGroup.Append>
             </InputGroup>
@@ -135,11 +162,16 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
             onItemRemoval(item),
         );
     };
-
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+    var thisDay = dd + '/' + mm + '/' + yyyy;
     return (
         <Container fluid className={`item ${item.completed && 'completed'}`}>
             <Row>
                 <Col xs={1} className="text-center">
+                   
                     <Button
                         className="toggles"
                         size="sm"
@@ -156,7 +188,9 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                                 item.completed ? 'fa-check-square' : 'fa-square'
                             }`}
                         />
-                    </Button>
+                     </Button>
+
+                     <p>{thisDay}</p>
                 </Col>
                 <Col xs={10} className="name">
                     {item.name}
