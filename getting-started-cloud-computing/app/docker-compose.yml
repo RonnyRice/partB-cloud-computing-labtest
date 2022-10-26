@@ -16,7 +16,7 @@ services:
       MYSQL_DB: todos
 
   app2:
-    image: node:12-alpine
+    image: getting-started-cloud-computing
     command: sh -c "yarn install && yarn run dev"
     ports:
       - 80:3000
