@@ -27,7 +27,7 @@ function App() {
     return (
         <div> 
             <h2 class="myTitle">{message}</h2>
-            <h3 class ="myTitle">{thisTime}</h3>
+            
              <Container>
              
              <Row>
@@ -96,6 +96,7 @@ function TodoListCard() {
         </React.Fragment>
     );
 }
+
 
 function AddItemForm({ onNewItem }) {
     const { Form, InputGroup, Button } = ReactBootstrap;
