@@ -129,6 +129,7 @@ function AddItemForm({ onNewItem }) {
                     type="text"
                     placeholder="New Item"
                     aria-describedby="basic-addon1"
+                    readOnly={true}
                 />
                 <InputGroup.Append>
                     <Button
@@ -180,7 +181,7 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                         className="toggles"
                         size="sm"
                         variant="link"
-                        onClick={toggleCompletion}
+                        
                         aria-label={
                             item.completed
                                 ? 'Mark item as incomplete'
@@ -203,7 +204,7 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                     <Button
                         size="sm"
                         variant="link"
-                        onClick={removeItem}
+                        
                         aria-label="Remove Item"
                     >
                         <i className="fa fa-trash text-danger" />
