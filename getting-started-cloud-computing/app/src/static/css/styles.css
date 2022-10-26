@@ -43,6 +43,6 @@ button:focus {
     border: 1px solid #333;
 }
 
-#myTitle{
+.myTitle{
     text-align: center;
 }

@@ -1,6 +1,8 @@
 function App() {
-    var myHour = new Date();
-    var hh = myHour.getHours();
+    var thisDate = new Date();
+    var hh = thisDate.getHours();
+    var minutes = thisDate.getMinutes();
+    var thisTime = hh + ":" + minutes;
     var message = "";
     if ( hh >= 0 && hh <= 6){
         message = "Good Night!";
@@ -24,7 +26,8 @@ function App() {
     const {  Container, Row, Col } = ReactBootstrap;
     return (
         <div> 
-            <h2 id="myTitle">{message}</h2>
+            <h2 class="myTitle">{message}</h2>
+            <h3 class ="myTitle">{thisTime}</h3>
              <Container>
              
              <Row>
